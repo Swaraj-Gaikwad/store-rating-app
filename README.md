@@ -1,74 +1,46 @@
-# 🏪 Store Rating App
+Store Rating App
+Overview
 
-## 🚀 Overview
-
-A full-stack web application that allows users to rate stores.  
+A full-stack web application that allows users to rate stores.
 The system supports multiple roles with different functionalities:
 
-- 🔴 Admin  
-- 🟢 Normal User  
-- 🔵 Store Owner  
+🔴 Admin
+🟢 Normal User
+🔵 Store Owner
 
 This project demonstrates role-based access control, authentication, database relationships, and full-stack integration.
 
----
-
-## 🛠 Tech Stack
-
-### Frontend
-
-- React (Vite)  
-- Axios  
-- React Router DOM  
-
-### Backend
-
-- Node.js  
-- Express.js  
-
-### Database
-
-- MySQL  
-
----
-
-## 👥 User Roles & Features
-
-### 🔴 Admin
-
-- Add new stores  
-- View all stores  
-- Delete stores  
-
-### 🟢 Normal User
-
-- View all stores  
-- Submit ratings (1–5)  
-- Update ratings  
-
-### 🔵 Store Owner
-
-- View users who rated their store  
-- See average rating of their store  
-
----
-
-## 🧠 Key Concepts Implemented
-
-- JWT Authentication  
-- Role-Based Access Control (RBAC)  
-- REST APIs  
-- Relational Database Design (MySQL)  
-- CRUD Operations  
-- Protected Routes (Frontend + Backend)  
-
----
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone Repository
-
-```bash
+🛠 Tech Stack
+Frontend
+React (Vite)
+Axios
+React Router DOM
+Backend
+Node.js
+Express.js
+Database
+MySQL
+👥 User Roles & Features
+🔴 Admin
+Add new stores
+View all stores
+Delete stores
+🟢 Normal User
+View all stores
+Submit ratings (1–5)
+Update ratings
+🔵 Store Owner
+View users who rated their store
+See average rating of their store
+🧠 Key Concepts Implemented
+JWT Authentication
+Role-Based Access Control (RBAC)
+REST APIs
+Relational Database Design (MySQL)
+CRUD Operations
+Protected Routes (Frontend + Backend)
+⚙️ Setup Instructions
+1️⃣ Clone Repository
 git clone https://github.com/Swaraj-Gaikwad/store-rating-app.git
 cd store-rating-app
 2️⃣ Backend Setup
