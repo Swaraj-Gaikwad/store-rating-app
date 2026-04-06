@@ -1,7 +1,8 @@
 Store Rating App
-Overview
+🚀 Overview
 
 A full-stack web application that allows users to rate stores.
+
 The system supports multiple roles with different functionalities:
 
 🔴 Admin
