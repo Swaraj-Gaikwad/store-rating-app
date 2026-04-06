@@ -12,34 +12,45 @@ The system supports multiple roles with different functionalities:
 This project demonstrates role-based access control, authentication, database relationships, and full-stack integration.  
   
 🛠 Tech Stack  
-Frontend  
-React (Vite)  
-Axios  
-React Router DOM  
-Backend  
-Node.js  
-Express.js  
+  
+Frontend:    
+- React (Vite)  
+- Axios  
+- React Router DOM  
+Backend:    
+- Node.js  
+- Express.js  
 Database  
-MySQL  
+MySQL    
+
 👥 User Roles & Features  
-🔴 Admin  
-Add new stores  
-View all stores  
-Delete stores  
+  
+🔴 Admin
+    
+- Add new stores  
+- View all stores  
+- Delete stores  
+  
 🟢 Normal User  
-View all stores  
-Submit ratings (1–5)  
-Update ratings  
+
+- View all stores  
+- Submit ratings (1–5)  
+- Update ratings  
 🔵 Store Owner  
-View users who rated their store  
-See average rating of their store  
+  
+- View users who rated their store  
+- See average rating of their store  
+  
 🧠 Key Concepts Implemented  
-JWT Authentication  
-Role-Based Access Control (RBAC)  
-REST APIs  
-Relational Database Design (MySQL)  
-CRUD Operations  
-Protected Routes (Frontend + Backend)  
+  
+- JWT Authentication  
+- Role-Based Access Control (RBAC)  
+- REST APIs  
+- Relational Database Design (MySQL)  
+- CRUD Operations  
+- Protected Routes (Frontend + Backend)  
+
+```  
 ⚙️ Setup Instructions  
 1️⃣ Clone Repository  
 git clone https://github.com/Swaraj-Gaikwad/store-rating-app.git  
@@ -97,6 +108,7 @@ CREATE TABLE ratings (
   FOREIGN KEY (user_id) REFERENCES users(id),  
   FOREIGN KEY (store_id) REFERENCES stores(id)  
 );  
+```
   
 🔑 Credentials  
 Admin  
@@ -118,7 +130,7 @@ Email: owner@test.com
 Password: Password@123
   
 🌐 Application Flow  
-Admin creates stores and users  
-Users log in and rate stores  
-Ratings are stored in database  
-Store owners view ratings and average score  
+- Admin creates stores and users  
+- Users log in and rate stores  
+- Ratings are stored in database  
+- Store owners view ratings and average score  
