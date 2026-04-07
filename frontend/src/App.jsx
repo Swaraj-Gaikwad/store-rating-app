@@ -56,6 +56,56 @@ function Login() {
       <br /><br />
 
       <button onClick={handleLogin}>Login</button>
+      <br /><br />
+
+      <p onClick={() => navigate("/signup")} style={{ cursor: "pointer" }}>
+        Don't have an account? Signup
+      </p>
+    </div>
+  );
+}
+
+function Signup() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    address: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleSignup = async () => {
+    try {
+      await axios.post("http://localhost:5000/api/auth/signup", {
+        ...form,
+        role: "user",
+      });
+
+      alert("Signup successful ✅");
+      navigate("/");
+    } catch (err) {
+      alert("Signup failed");
+    }
+  };
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h2>Signup</h2>
+
+      <input placeholder="Name" onChange={(e) => setForm({ ...form, name: e.target.value })} />
+      <br /><br />
+
+      <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
+      <br /><br />
+
+      <input type="password" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
+      <br /><br />
+
+      <input placeholder="Address" onChange={(e) => setForm({ ...form, address: e.target.value })} />
+      <br /><br />
+
+      <button onClick={handleSignup}>Signup</button>
     </div>
   );
 }
@@ -63,14 +113,19 @@ function Login() {
 /* ================= USER STORES PAGE ================= */
 function UserStores() {
   const [stores, setStores] = useState([]);
-  const [ratings, setRatings] = useState({}); // store_id → rating
+  const [ratings, setRatings] = useState({});
+  const [search, setSearch] = useState("");
 
   const token = localStorage.getItem("token");
 
   // Fetch stores
   const fetchStores = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/stores", {
+      const url = search
+        ? `http://localhost:5000/api/stores/search?name=${search}`
+        : "http://localhost:5000/api/stores";
+
+      const res = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -82,7 +137,7 @@ function UserStores() {
     }
   };
 
-  // Handle dropdown change
+
   const handleRatingChange = (store_id, value) => {
     setRatings((prev) => ({
       ...prev,
@@ -90,7 +145,7 @@ function UserStores() {
     }));
   };
 
-  // Submit rating
+
   const rateStore = async (store_id) => {
     try {
       const rating = ratings[store_id] || 5; // default
@@ -114,12 +169,18 @@ function UserStores() {
     }
   };
 
+  
   useEffect(() => {
     fetchStores();
-  }, []);
+  }, [search]);
 
   return (
     <div style={{ padding: "20px" }}>
+      <input
+        placeholder="Search store..."
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <br /><br />
       <h2>Stores</h2>
 
       {stores.map((store) => (
@@ -314,9 +375,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/stores" element={<UserStores />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/owner" element={<OwnerDashboard />} />
+
       </Routes>
     </BrowserRouter>
   );
