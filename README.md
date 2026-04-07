@@ -17,11 +17,17 @@ Frontend:
 - React (Vite)  
 - Axios  
 - React Router DOM  
-Backend:    
-- Node.js  
+<br>
+
+Backend:      
+- Node.js    
 - Express.js  
+<br>
+
 Database  
-MySQL    
+<br>
+
+MySQL      
 
 👥 User Roles & Features  
   
@@ -49,6 +55,9 @@ MySQL
 - Relational Database Design (MySQL)  
 - CRUD Operations  
 - Protected Routes (Frontend + Backend)  
+  
+IMP: Make Changes in src/config/db.js for Database Connectivity (e.g: host, password etc.)   
+  
 
 ```  
 ⚙️ Setup Instructions  
